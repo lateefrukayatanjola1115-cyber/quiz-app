@@ -1,6 +1,13 @@
 window.addEventListener("load", function () {
   alert("It's Quiz Time");
 });
+function updateProgress() {
+  const total = questions.length;           // your questions array
+  const current = currentQuestionIndex + 1; // index starts at 0
+
+  document.getElementById("progress-text").textContent = current + "/" + total;
+  document.getElementById("progress-fill").style.width = (current / total) * 100 + "%";
+}
 const questions = [
   {
     question: "What does HTML stand for?",
@@ -184,6 +191,7 @@ function showQuestion() {
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
   });
+  updateProgress();
 }
 
 function resetState() {
