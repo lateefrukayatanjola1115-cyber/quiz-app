@@ -1,3 +1,6 @@
+window.addEventListener("load", function () {
+  alert("It's Quiz Time");
+});
 const questions = [
   {
     question: "What does HTML stand for?",
